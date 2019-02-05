@@ -1,4 +1,3 @@
-
 #Multiple Linear Regression
 
 # Importing the dataset
@@ -20,3 +19,11 @@ test_set = subset(dataset, split == FALSE)
 # Feature Scaling
 # training_set = scale(training_set)
 # test_set = scale(test_set)
+
+#Fitting Multiple Linear Regression to the training set (first and the second statments are the same)
+#regressor = lm(formula = Profit ~ R.D.Spend+Administration+Marketing.Spend+State , data =training_set)
+regressor = lm(formula = Profit ~ .,
+               data= training_set)
+
+# Predicting the Test set results
+y_pred = predict(regressor, newdata = test_set)
